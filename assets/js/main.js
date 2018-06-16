@@ -11,9 +11,12 @@
     function removeTrain() {
         event.preventDefault();
         let key = $(this).attr('data-id')
+        $key = '.' + key
+        $($key).empty();
         console.log(key)
         firebase.database().ref(key).remove();
-        location.reload();
+        
+        // location.reload();
     };
 
     // Capture Button Click
@@ -75,8 +78,8 @@
       console.log(childSnapshot.val().dateAdded);
       
       // full list of trains
-      $("#train-list").append(`<tr>
-                                <td><button data-id="${childSnapshot.key}" class="btn btn-danger p-0 pl-1 pr-1" id="remove-train" type="submit">X</button></td>
+      $("#train-list").append(`<tr class="${childSnapshot.key}">
+                                <td><button data-id="${childSnapshot.key}" class="btn btn-danger p-0 pl-1 pr-1 pt-0" id="remove-train" type="submit">x</button></td>
                                 <td>${childSnapshot.val().name}</td>
                                 <td>${childSnapshot.val().destination}</td>
                                 <td>${childSnapshot.val().frequency}</td>
