@@ -1,0 +1,26 @@
+.inset-text {
+    /* Shadows are visible under slightly transparent text color */
+    color: rgba(10,60,150, 0.8);
+    text-shadow: 1px 4px 6px #def, 0 0 0 #000, 1px 4px 6px #def;
+}
+/* Don't show shadows when selecting text */
+::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
+::selection { background: #5af; color: #fff; text-shadow: none; }
+
+body {
+    background: url("../images/old_railway_station_leave_railroad_tracks_railroad_track_platform_wild-669428.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: rgba(10,60,150, 0.8);
+}
+
+.card-body {
+    background-color: #e9ecef;
+}
+
+.submit-button {
+    background-color: rgba(10,60,150, 0.8);;
+    color: white;
+}
